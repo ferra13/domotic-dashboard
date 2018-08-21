@@ -19,9 +19,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "img/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.css",
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": ["../node_modules/jquery/dist/jquery.min.js", 
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "../node_modules/chart.js/dist/Chart.bundle.js",
+        "../node_modules/chartjs-plugin-zoom/chartjs-plugin-zoom.js"
+        ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

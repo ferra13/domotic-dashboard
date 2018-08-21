@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark static-top">
+    <a class="navbar-brand" href="#">Domotic</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item active mx-1">
+          <button class="btn btn-outline-light btn-lg" routerLink="dashboard"><i class="fas fa-home"></i></button>
+        </li>
+        <li class="nav-item dropdown active mx-1">
+                <button class="btn btn-outline-light btn-lg dropdown-toggle" id="temperatureDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-thermometer-half"></i>
+                </button>
+            <div class="dropdown-menu" aria-labelledby="temperatureDropdown">
+              <a class="dropdown-item"  routerLink="temperature/INSIDE">Interna</a>
+              <a class="dropdown-item" routerLink="temperature/OUTSIDE">Esterna</a>
+            </div>
+          </li>
+
+        <li class="nav-item active mx-1">
+            
+        </li>
+        <li class="nav-item active mx-1">
+            <button class="btn btn-outline-light btn-lg" routerLink="pressure"><i class="fas fa-tachometer-alt"></i></button>
+        </li>
+        <li class="nav-item active mx-1">
+            <button class="btn btn-outline-light btn-lg" routerLink="humidity"><i class="fas fa-tint"></i></button>
+        </li>
+        <li class="nav-item active mx-1">
+            <button class="btn btn-outline-light btn-lg" routerLink="light"><i class="fas fa-lightbulb"></i></button>
+        </li>
+      </ul>
+      
+        <button class="btn btn-outline-light mr-0 " type="button"><i class="fas fa-cog"></i></button>
+      
+    </div>
+  </nav>

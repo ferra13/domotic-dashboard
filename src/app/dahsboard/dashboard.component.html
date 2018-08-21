@@ -1,0 +1,77 @@
+<h1>
+    <i class="fas fa-home fa-2x"></i> Domotic Dashboard</h1>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-9">
+                <h5>{{title}}
+                    <div>
+                        <small>rilevato alle:
+                            <span *ngIf="temperatureOutside">{{temperatureOutside.data | date: 'dd/MM/yyyy HH:mm:ss'}}</span>
+                        </small>
+                    </div>
+                </h5>
+            </div>
+            <div class="col-lg-2 right-block">
+                <div>
+                    <i class="fas fa-sync-alt fa-2x" [ngClass]="{'fa-spin': !temperatureOutside}" (click)="getCurrentMeasures()"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ng-template #spinner>
+                <i class="fas fa-circle-notch fa-2x fa-pulse"></i>
+            </ng-template>
+            <div class="col-lg-6 col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Esterno
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td ><i class="fas fa-thermometer-half fa-2x" [ngbTooltip]="'Temperatura'"></i></td>
+                                    <td><span *ngIf="temperatureOutside else spinner"><strong>{{ temperatureOutside.value }} °C</strong></span></td>
+                                    <td class="text-right"><button class="btn btn-info" type="button" (click)="temperatureDetail(temperatureOutside.position)"><i class="fas fa-caret-square-right"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td ><i class="fas fa-tachometer-alt fa-2x" [ngbTooltip]="'Pressione'"></i></td>
+                                    <td><span *ngIf="currentPressure else spinner" ><strong>{{ currentPressure.value }} mmHg</strong></span></td>
+                                    <td class="text-right"><button class="btn btn-info" type="button" (click)="pressureDetail()"><i class="fas fa-caret-square-right"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td ><i class="fas fa-tint fa-2x" [ngbTooltip]="'Umidità'"></i></td>
+                                    <td><span *ngIf="currentHumidity else spinner"><strong>{{ currentHumidity.value }} %</strong></span></td>
+                                    <td class="text-right"><button class="btn btn-info" type="button" (click)="humidityDetail()"><i class="fas fa-caret-square-right"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Interno
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td ><i class="fas fa-thermometer-half fa-2x" [ngbTooltip]="'Temperatura'"></i></td>
+                                        <td><span *ngIf="temperatureInside else spinner" ><strong>{{ temperatureInside.value }} °C</strong></span></td>
+                                        <td class="text-right"><button class="btn btn-info" type="button" (click)="temperatureDetail(temperatureInside.position)"><i class="fas fa-caret-square-right"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td ><i class="fas fa-lightbulb fa-2x" [ngbTooltip]="'Luce'" ></i></td>
+                                        <td><span *ngIf="currentLight else spinner" ><strong>{{ currentLight.value }} Lux</strong></span></td>
+                                        <td class="text-right"><button class="btn btn-info" type="button" (click)="lightDetail()"><i class="fas fa-caret-square-right"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+nav {
+    background-color: #0066cc;
+    animation: 100ms enterFromTop ease-in;
+    animation-fill-mode: forwards;
+    transform-origin: top;
+}
+

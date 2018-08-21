@@ -1,0 +1,7 @@
+
+.card {
+    animation: fadeIn 200ms ease-in;
+    animation-fill-mode:forwards;
+    opacity: 0;
+    animation-delay: 100ms;
+}
