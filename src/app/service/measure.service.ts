@@ -7,8 +7,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 @Injectable()
 export class MeasureService {
 
-    // private serverUrl = 'http://2.238.144.131:8080/domotic-hub';
-    private serverUrl = 'http://localhost:8080/domotic-hub';
+    private serverUrl = 'http://2.238.144.131:8080/domotic-hub';
+    // private serverUrl = 'http://localhost:8080/domotic-hub';
     private serverApi = {
         getMeasure: this.serverUrl + '/api/measure',
         getTemperature: this.serverUrl + '/api/measure/temperature',
