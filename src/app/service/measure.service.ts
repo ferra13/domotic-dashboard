@@ -1,7 +1,7 @@
 import { Measure } from './../classes/measure';
 import { Injectable } from '@angular/core';
 // import { Http, Response } from '@angular/http';
-import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/map';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable()
